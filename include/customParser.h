@@ -9,13 +9,14 @@
  *        to extract specific information such as battleground name, faction which won,
  *        date, and time.
  */
-class customParser {
+class customParser
+{
 public:
     /**
      * @brief Constructs a customParser object with the given HTML content.
      * @param htmlContent The HTML content to be parsed.
      */
-    customParser(const std::string& htmlContent);
+    customParser(const std::string & htmlContent);
 
     /**
      * @brief Destructor to clean up resources.

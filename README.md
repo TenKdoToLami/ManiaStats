@@ -1,6 +1,6 @@
 # ManiaStats
 
-Attempt to scrape data from     
+Attempt to scrape data from     https://www.wow-mania.com/pvpstats/redemption/battleground.php?id=27340
 For some advanced statistics analysis
 
 
