@@ -7,6 +7,7 @@ getHTML::getHTML()
 
     for (int i = 1; i <= LATEST_BG; i++)
     {
+        std::cerr << i << std::endl;
         std::string htmlContent;
         std::string currentURL = URL + std::to_string(i);
         curl_easy_setopt(curl, CURLOPT_URL, currentURL.c_str());
@@ -16,14 +17,27 @@ getHTML::getHTML()
 
         customParser CParser(htmlContent);
         CParser.findHeaders();
-        std::cout << CParser.battlegroundName << " " << CParser.faction << std::endl;
+        
+        printOutCurrentParse(CParser);
     }
+
+    return;
 }
 
 getHTML::~getHTML()
 {
     curl_easy_cleanup(curl);
     curl_global_cleanup();
+}
+
+void getHTML::printOutCurrentParse(const customParser & parse)
+{
+    std::cout   << parse.battlegroundName << '\n'
+                << parse.faction << '\n'
+                << parse.date << '\n'
+                << parse.time << std::endl;
+    
+    return;
 }
 
 size_t writeCallback(void * contents, size_t size, size_t nmemb, std::string * buffer)

@@ -18,6 +18,9 @@ private:
     const std::string URL = "https://www.wow-mania.com/pvpstats/redemption/battleground.php?id=";
     CURL* curl;
     CURLcode res;
+
+    void printOutCurrentParse(const customParser & parse);
+    
 };
 
 size_t writeCallback(void* contents, size_t size, size_t nmemb, std::string* buffer);
