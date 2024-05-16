@@ -5,11 +5,11 @@ getHTML::getHTML()
     curl_global_init(CURL_GLOBAL_DEFAULT);
     curl = curl_easy_init();
 
-    for (int i = 1; i <= LATEST_BG; i++)
+    for (currentID = 1; currentID <= LATEST_BG; i++)
     {
-        std::cerr << i << std::endl;
+        //std::cerr << currentID << std::endl;
         std::string htmlContent;
-        std::string currentURL = URL + std::to_string(i);
+        std::string currentURL = URL + std::to_string(currentID);
         curl_easy_setopt(curl, CURLOPT_URL, currentURL.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &htmlContent);
@@ -32,11 +32,12 @@ getHTML::~getHTML()
 
 void getHTML::printOutCurrentParse(const customParser & parse)
 {
-    std::cout   << parse.battlegroundName << '\n'
+    std::cout   << currentID
+                << parse.battlegroundName << '\n'
                 << parse.faction << '\n'
                 << parse.date << '\n'
                 << parse.time << std::endl;
-    
+                
     return;
 }
 
