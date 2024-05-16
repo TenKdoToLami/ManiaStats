@@ -6,6 +6,16 @@ For some advanced statistics analysis
 
 
 Data storage
-F = faction who won
-D = date    2024-05-05 19:45:44
-M = map     Warsong Gulch / Arathi Basin / Eye of the Storm
+id         of BG
+faction    who won
+map        Warsong Gulch / Arathi Basin / Eye of the Storm
+date       2024-05-05
+time       19:45:44
+
+
+Sample
+1351
+Warsong Gulch
+Alliance Wins
+2015-09-02
+16:37:56
